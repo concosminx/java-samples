@@ -1,0 +1,19 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="TestDependency">
+
+	<test name="TestCase1">
+		 
+		<classes>
+			<class name="com.mkyong.testng.examples.dependency.TestApp"></class>
+			<class name="com.mkyong.testng.examples.dependency.TestDatabase"></class>
+			<class name="com.mkyong.testng.examples.dependency.TestServer"></class>
+		</classes>
+		 <!-- 
+		<packages>
+			<package name="com.mkyong.testng.examples.dependency.*"></package>
+		</packages>
+		 -->
+	</test>
+
+</suite>

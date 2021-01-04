@@ -1,0 +1,26 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<!-- @BeforeSuite -->
+<suite name="TestAll2">
+
+	<!-- @BeforeTest -->
+	<test name="case3">
+	  <classes>
+		<class name="com.cic.testng.configuration.tests.TestConfiguration" />
+		<class name="com.cic.testng.configuration.tests.TestDBConnection" />
+		<class name="com.cic.testng.configuration.tests.DBConfig" />
+	  </classes>
+	</test>
+	<!-- @AfterTest -->
+	
+	<!-- @BeforeTest -->
+	<test name="case4">
+	  <classes>
+		<class name="com.cic.testng.configuration.tests.TestDBConnection" />
+		<class name="com.cic.testng.configuration.tests.DBConfig" />
+	  </classes>
+	</test>
+	<!-- @AfterTest -->
+	
+</suite>
+<!-- @AfterSuite -->
