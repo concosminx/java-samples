@@ -1,0 +1,27 @@
+apply plugin: 'java'
+apply plugin: 'jacoco'
+apply plugin: 'application'
+
+
+description = 'Algorithms examples in Java'
+group = 'com.nimsoc'
+
+mainClassName = 'com.nimsoc.java_algorithms.Main'
+
+repositories {
+  jcenter()
+}
+
+test {
+  testLogging.showStandardStreams = true
+  jvmArgs += ['-XX:MaxMetaspaceSize=256m','-Xmx512m']
+  useTestNG {
+    def myXMLFiles =fileTree(dir: 'src/test/resources', include: '**/*TestSuite*.xml')
+    def suitesList = myXMLFiles.files.toArray() as File[]
+    suites suitesList
+  }
+}
+
+dependencies {
+  testCompile 'org.testng:testng:6.10'
+}

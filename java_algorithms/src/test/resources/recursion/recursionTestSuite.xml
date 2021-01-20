@@ -1,0 +1,28 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Recursion Algorithms">
+  <test name="Algorithms">
+    <classes>
+      <class name="com.nimsoc.java_algorithms.recursion.tests.FirstNNumbersTestNG">
+        <methods>
+          <include name="testRecursiveSum">
+            <parameter name="nmb" value="5" />
+          </include>
+          <include name="testRecursiveSumExc" />
+        </methods>
+      </class>
+      <class name="com.nimsoc.java_algorithms.recursion.tests.FactorialTestNG" />
+      <class name="com.nimsoc.java_algorithms.recursion.tests.EuclideanGCDTestNG" />
+      <class name="com.nimsoc.java_algorithms.recursion.tests.BinarySearchTestNG">
+        <methods>
+          <include name="testBinarySearch">
+            <parameter name="dim" value="5" />
+          </include>
+        </methods>
+      </class>
+    </classes>
+  </test>
+</suite>
+
+
+
