@@ -1,0 +1,12 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Selection Algorithms">
+  <test name="Selection Algorithms">
+    <packages>
+      <package name="com.nimsoc.java_algorithms.selection.tests.*"/>
+    </packages>
+  </test>
+</suite>
+
+
+

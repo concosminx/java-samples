@@ -1,7 +1,7 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
 <suite name="Recursion Algorithms">
-  <test name="Algorithms">
+  <test name="Recursion Algorithms">
     <classes>
       <class name="com.nimsoc.java_algorithms.recursion.tests.FirstNNumbersTestNG">
         <methods>
@@ -20,6 +20,7 @@
           </include>
         </methods>
       </class>
+      <class name="com.nimsoc.java_algorithms.recursion.tests.HanoiTestNG" />
     </classes>
   </test>
 </suite>

@@ -1,0 +1,12 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Dynamic Prg. Algorithms">
+  <test name="Dynamic Prg. Algorithms">
+    <packages>
+      <package name="com.nimsoc.java_algorithms.dynamic.tests.*"/>
+    </packages>
+  </test>
+</suite>
+
+
+

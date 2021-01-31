@@ -1,6 +1,9 @@
 apply plugin: 'java'
 apply plugin: 'jacoco'
 apply plugin: 'application'
+apply plugin: 'eclipse'
+
+//https://docs.gradle.org/current/userguide/jacoco_plugin.html
 
 
 description = 'Algorithms examples in Java'
