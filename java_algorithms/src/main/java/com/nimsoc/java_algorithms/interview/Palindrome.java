@@ -6,7 +6,7 @@ package com.nimsoc.java_algorithms.interview;
   such as madam or racecar. 
 */
 public class Palindrome {
-  public static boolean palindrome(String s) {
+  public boolean palindrome(String s) {
     if (s == null || s.length() <= 1) {
       return true;
     }

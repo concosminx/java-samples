@@ -17,7 +17,7 @@ public class Fibonacci {
     return naiveFibonacci(n - 1) + naiveFibonacci(n - 2);
   }
   
-  private Map<Integer, Integer> memoizeTable;
+  private final Map<Integer, Integer> memoizeTable;
   
   public Fibonacci() {
     this.memoizeTable = new HashMap<>();

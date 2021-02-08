@@ -1,0 +1,12 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Backtracking Algorithms">
+  <test name="Backtracking Algorithms">
+    <packages>
+      <package name="com.nimsoc.java_algorithms.backtracking.tests.*"/>
+    </packages>
+  </test>
+</suite>
+
+
+

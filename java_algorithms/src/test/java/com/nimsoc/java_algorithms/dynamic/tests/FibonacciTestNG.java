@@ -14,7 +14,7 @@ public class FibonacciTestNG {
     Assert.assertEquals(new Fibonacci().fibonacciDP(1), 1);
     Assert.assertEquals(new Fibonacci().fibonacciDP(6), 8);
     
-    Assert.assertEquals(new Fibonacci().fibonacciDP(8), new Fibonacci().fibonacciDP(8));
+    Assert.assertEquals(new Fibonacci().fibonacciDP(8), new Fibonacci().naiveFibonacci(8));
     
   }
   
