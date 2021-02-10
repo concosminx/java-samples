@@ -20,7 +20,7 @@ public class TestMultipleThreads {
 	public void loadTestThisWebsite() {
 
 		WebDriver driver = new FirefoxDriver();
-		driver.get("http://svn.emsys.ro/viewvc/LO?view=revision&revision=4079");
+		driver.get("http://svn.example.ro/viewvc/LO?view=revision&revision=4079");
 		System.out.println("Page Title is " + driver.getTitle());
 		Assert.assertEquals("Google", driver.getTitle());
 		driver.quit();
@@ -39,7 +39,7 @@ public class TestMultipleThreads {
 
 		System.out.printf("%n[START] Thread Id : %s is started!", Thread.currentThread().getId());
 		WebDriver driver = new FirefoxDriver();
-		driver.get("http://svn.emsys.ro/viewvc/LO?view=revision&revision=4079");
+		driver.get("http://svn.example.ro/viewvc/LO?view=revision&revision=4079");
 
 		System.out.printf("%n[END] Thread Id : %s", Thread.currentThread().getId());
 
@@ -53,7 +53,7 @@ public class TestMultipleThreads {
 
 		System.out.printf("[START] Thread Id : %s%n", Thread.currentThread().getId());
 
-		String url = "http://svn.emsys.ro/viewvc/LO?view=revision&revision=4079";
+		String url = "http://svn.example.ro/viewvc/LO?view=revision&revision=4079";
 
 		HttpClient client = HttpClientBuilder.create().build();
 		HttpGet request = new HttpGet(url);
