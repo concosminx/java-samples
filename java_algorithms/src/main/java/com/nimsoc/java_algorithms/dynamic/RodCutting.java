@@ -53,16 +53,8 @@ public class RodCutting {
       return profit;
     }
 
-    public void setProfit(int profit) {
-      this.profit = profit;
-    }
-
     public List<Integer> getCuts() {
       return cuts;
-    }
-
-    public void setCuts(List<Integer> cuts) {
-      this.cuts = cuts;
     }
 
     public Result(int profit) {

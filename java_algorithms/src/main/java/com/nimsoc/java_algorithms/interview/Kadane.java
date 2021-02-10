@@ -8,7 +8,7 @@ package com.nimsoc.java_algorithms.interview;
 
 public class Kadane {
   
-  public static int solve(int[] nums) {
+  public int solve(int[] nums) {
     int maxEndHere = nums[0];
     int maxSoFar = nums[0];
     for (int i = 1; i < nums.length; i++) {

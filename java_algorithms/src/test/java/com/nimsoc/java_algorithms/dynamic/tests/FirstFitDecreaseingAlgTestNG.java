@@ -8,9 +8,16 @@ import org.testng.annotations.Test;
 public class FirstFitDecreaseingAlgTestNG {
 
   @Test
-  public void testBins() {
+  public void testBinsOk() {
     FirstFitDecreaseingAlg alg = new FirstFitDecreaseingAlg(Arrays.asList(10, 5, 2, 4, 1), 10);
     alg.solve();
     Assert.assertEquals(alg.getBins().size(), 3);
+  }
+  
+  @Test
+  public void testBinsNotOk() {
+    FirstFitDecreaseingAlg alg = new FirstFitDecreaseingAlg(Arrays.asList(10, 5, 2, 4), 1);
+    alg.solve();
+    Assert.assertEquals(alg.getBins().size(), 0);
   }
 }

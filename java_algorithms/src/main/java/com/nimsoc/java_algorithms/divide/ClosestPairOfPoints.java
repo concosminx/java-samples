@@ -45,13 +45,6 @@ public class ClosestPairOfPoints {
       List<Point> rightSubPointsY = new ArrayList<>();
       List<Point> rightSubPointsSortedX = new ArrayList<>();
       
-      System.out.println("xxxxx");
-      pointsSortedX.stream().forEach(System.out::println);
-      System.out.println("yyyyyy");
-      pointsY.stream().forEach(System.out::println);
-      System.out.println("numOfPoints: " + numOfPoints);
-      
-
       for (int index = 0; index < numOfPoints; index++) {
         if (pointsY.get(index).getX() <= middlePoint.getX()) {
           leftSubPointsY.add(pointsY.get(index));
@@ -61,19 +54,6 @@ public class ClosestPairOfPoints {
           rightSubPointsSortedX.add(pointsSortedX.get(index));
         }
       }
-      
-      System.out.println("leftSubPointsY");
-      leftSubPointsY.stream().forEach(System.out::println);
-      System.out.println("rightSubPointsY");
-      rightSubPointsY.stream().forEach(System.out::println);
-      
-      System.out.println("leftSubPointsSortedX");
-      leftSubPointsSortedX.stream().forEach(System.out::println);
-      System.out.println("rightSubPointsSortedX");
-      rightSubPointsSortedX.stream().forEach(System.out::println);
-
-      
-      
       
       double sigmaLeft = findClosestPoints(leftSubPointsSortedX, leftSubPointsY, numOfPoints - middleIndex);
       double sigmaRight = findClosestPoints(rightSubPointsSortedX, rightSubPointsY, middleIndex);

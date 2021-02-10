@@ -79,6 +79,7 @@ class Bin {
     return true;
   }
 
+  /*
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -88,5 +89,6 @@ class Bin {
     });
     return sb.toString();
   }
+  */
 
 }

@@ -10,11 +10,13 @@ public class KadaneTestNG {
   
   @Test 
   public void testPosNeg() {
-    Assert.assertEquals(Kadane.solve(new int[] {1, -2, 3, 4, -5, 8}), 10);
+    Kadane k = new Kadane();
+    Assert.assertEquals(k.solve(new int[] {1, -2, 3, 4, -5, 8}), 10);
   }
   
   @Test 
   public void testNeg() {
-    Assert.assertEquals(Kadane.solve(new int[] {-10, -8, -3, -7, -2, -7, -3, -9}), -2);
+    Kadane k = new Kadane();
+    Assert.assertEquals(k.solve(new int[] {-10, -8, -3, -7, -2, -7, -3, -9}), -2);
   }
 }

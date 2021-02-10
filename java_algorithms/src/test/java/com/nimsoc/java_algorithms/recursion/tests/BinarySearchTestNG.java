@@ -25,6 +25,7 @@ public class BinarySearchTestNG {
     BinarySearch alg = new BinarySearch(arr);
     Assert.assertTrue(alg.search(0, dim-1, nr) == Arrays.binarySearch(arr, nr));
     
+    Assert.assertTrue(alg.search(0, dim-1, dim+1) == -1);
   }
 
 }
