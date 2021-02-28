@@ -1,0 +1,56 @@
+package com.nimsoc.reactive.test.streampublisher;
+
+import org.junit.Test;
+
+import java.util.List;
+import java.util.concurrent.TimeUnit;
+
+import static com.jayway.awaitility.Awaitility.await;
+import com.nimsoc.reactive.crypto.Crypto;
+import com.nimsoc.reactive.crypto.CryptoEndSubscriber;
+import com.nimsoc.reactive.crypto.CryptoPublisher;
+import static org.assertj.core.api.Java6Assertions.assertThat;
+
+public class SubscriptionObjectColdPublisherTest {
+
+  @Test
+  public void givenPublisher_whenSubscribe_thenShouldConsumeAllElements() throws InterruptedException {
+    CryptoEndSubscriber subscriber;
+    List<Crypto> expectedResult;
+    //given
+    try (CryptoPublisher publisher = new CryptoPublisher()) {
+      
+      subscriber = new CryptoEndSubscriber(3);
+      List<Crypto> items = List.of(new Crypto("Ethereum", 1795.99F), new Crypto("Litecoin", 208.66F));
+      expectedResult = List.of(new Crypto("Ethereum", 1795.99F), new Crypto("Litecoin", 208.66F));
+      //when
+      publisher.subscribe(subscriber);
+      items.forEach(publisher::submit);
+    }
+
+    //then
+    await().atMost(1000, TimeUnit.MILLISECONDS).until(
+            () -> assertThat(subscriber.consumedElements).containsExactlyElementsOf(expectedResult)
+    );
+  }
+
+  @Test
+  public void givenPublisher_whenSubscribe_thenShouldConsumeOneElement() throws InterruptedException {
+    CryptoEndSubscriber subscriber;
+    List<Crypto> expectedResult;
+    try ( //given
+            CryptoPublisher publisher = new CryptoPublisher()) {
+      subscriber = new CryptoEndSubscriber(1);
+      List<Crypto> items = List.of(new Crypto("Ethereum", 1795.99F), new Crypto("Litecoin", 208.66F));
+      expectedResult = List.of(new Crypto("Ethereum", 1795.99F));
+      //when
+      publisher.subscribe(subscriber);
+      items.forEach(publisher::submit);
+    }
+
+    //then
+    await().atMost(1000, TimeUnit.MILLISECONDS).until(
+            () -> assertThat(subscriber.consumedElements).containsExactlyElementsOf(expectedResult)
+    );
+  }
+}
