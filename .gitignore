@@ -1,1 +1,9 @@
 /java_design_patterns/.gradle/
+/java_lambdas_streams/.gradle/
+/java_lambdas_streams/build/
+/java_ws/ws_with_payara/.gradle/
+/java_ws/ws_with_payara/build/
+/java_ws/ws_with_payara/micro-lib/build/
+/java_ws/ws_with_payara/micro-api/build/
+/java_ws/ws_with_dropwizard/.gradle/
+/java_ws/ws_with_dropwizard/build/
