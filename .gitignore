@@ -7,3 +7,11 @@
 /java_ws/ws_with_payara/micro-api/build/
 /java_ws/ws_with_dropwizard/.gradle/
 /java_ws/ws_with_dropwizard/build/
+/java_reactive/.gradle/
+/java_reactive/build/
+/java_concurency/word_count/.gradle/
+/java_concurency/word_count/build/
+/java_jvm/millions/.gradle/
+/java_jvm/millions/build/
+/java_jvm/jvm_tests/.gradle/
+/java_jvm/jvm_tests/build/

@@ -1,0 +1,55 @@
+apply plugin: 'java'
+apply plugin: 'jacoco'
+apply plugin: 'application'
+
+
+mainClassName = 'com.nimsoc.jvm_tests.cc.TheTester'
+
+repositories {
+  jcenter()
+}
+
+//applicationDefaultJvmArgs = [
+//]
+
+tasks.withType(JavaExec) {
+  jvmArgs = [
+    '-Xms2g',
+    '-Xmx2g',
+    '-XX:MaxMetaspaceSize=128m',
+    '-Dfile.encoding=UTF-8',
+    '-Xloggc:gc.log'
+  ]
+}
+
+//tasks.withType(JavaCompile) {
+//options.compilerArgs << '-Xlint:unchecked' << "-Werror"
+//options.deprecation = true
+//}
+
+//  '-server',
+//  '-XX:NewSize=512m -XX:MaxNewSize=512m',
+//  '-XX:+UseConcMarkSweepGC -XX:+UseParNewGC',
+//  '-XX:+CMSClassUnloadingEnabled',
+//  '-XX:+CMSParallelRemarkEnabled -XX:CMSInitiatingOccupancyFraction=75 -XX:+UseCMSInitiatingOccupancyOnly',
+//  '-XX:+ScavengeBeforeFullGC -XX:+CMSScavengeBeforeRemark',
+//  '-Duser.timezone="Europe/Bucharest"',
+//  '-verbose:gc -XX:+PrintGCDetails',
+//  '-XX:+PrintGCDateStamps',
+//  '-XX:+UseGCLogFileRotation -XX:NumberOfGCLogFiles=10 -XX:GCLogFileSize=100M',
+//  '-XX:+HeapDumpOnOutOfMemoryError',
+//  '-Djava.rmi.server.hostname=192.168.1.129',
+//  '-Dcom.sun.management.jmxremote.port=9876',
+//  '-Dcom.sun.management.jmxremote.authenticate=false',
+//  '-Dcom.sun.management.jmxremote.ssl=false'
+
+//-server
+//-Xms2g -Xmx2g
+//-XX:+UseG1GC -XX:MaxGCPauseMillis=200
+//-XX:+UseStringDeduplication
+//-XX:+UnlockDiagnosticVMOptions 
+//-XX:+G1SummarizeConcMark
+//-XX:InitiatingHeapOccupancyPercent=35
+//-XX:G1ReservePercent=10
+//-verbosegc -XX:+PrintGCDetails -XX:+PrintGCTimeStamps -XX:+PrintAdaptiveSizePolicy
+//-Xlog:gc=debug:file=gc.log:time,uptime,level,tags:filecount=5,filesize=100m

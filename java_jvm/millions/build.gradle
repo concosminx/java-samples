@@ -1,0 +1,20 @@
+apply plugin: 'java'
+apply plugin: 'jacoco'
+apply plugin: 'application'
+
+
+mainClassName = 'com.nimsoc.gc.Main'
+
+applicationDefaultJvmArgs = ["-Xlog:gc=debug:file=gc.log:time,uptime,level,tags:filecount=5,filesize=100m"]
+tasks.withType(JavaExec) {
+  jvmArgs = ['-Xms512m', '-Xmx512m']
+}
+
+repositories {
+  jcenter()
+}
+
+//tasks.withType(JavaCompile) {
+//options.compilerArgs << '-Xlint:unchecked' << "-Werror"
+//options.deprecation = true
+//}
