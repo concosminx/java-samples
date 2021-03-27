@@ -1,11 +1,13 @@
-/java_design_patterns/.gradle/
-/java_reactive/.gradle/
-/java_reactive/build/
-/java_concurency/word_count/.gradle/
-/java_concurency/word_count/build/
-/java_jvm/millions/.gradle/
-/java_jvm/millions/build/
-/java_jvm/jvm_tests/.gradle/
-/java_jvm/jvm_tests/build/
-/java_lambdas_streams/.gradle/
-/java_lambdas_streams/build/
+#Folders
+**/.gradle/**
+**/build/**
+
+# Miscellaneous
+*.class
+*.log
+*.pyc
+*.swp
+.DS_Store
+*.iml
+*.ipr
+*.iws
