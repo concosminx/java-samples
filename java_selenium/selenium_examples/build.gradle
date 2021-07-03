@@ -1,0 +1,22 @@
+apply plugin: 'java'
+apply plugin: 'jacoco'
+apply plugin: 'application'
+
+
+mainClassName = 'com.nimsoc.selenium.Main'
+
+repositories {
+  jcenter()
+}
+
+dependencies {
+  implementation group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '3.141.59'
+  testImplementation group: 'org.testng', name: 'testng', version: '6.14.3'
+}
+
+test {
+  useTestNG()
+  testLogging {
+    showStandardStreams = true
+  }
+}
