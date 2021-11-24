@@ -7,8 +7,8 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 public class DriverProvider {
 
   static {
-    System.setProperty("webdriver.gecko.driver", "D:\\Projects\\GIT\\java_samples\\java_selenium\\webdriver_binaries\\geckodriver.exe");
-    System.setProperty("webdriver.chrome.driver", "D:\\Projects\\GIT\\java_samples\\java_selenium\\webdriver_binaries\\chromedriver.exe");
+    System.setProperty("webdriver.gecko.driver", "D:\\Projects\\GIT\\java-samples\\java_selenium\\webdriver_binaries\\geckodriver.exe");
+    System.setProperty("webdriver.chrome.driver", "D:\\Projects\\GIT\\java-samples\\java_selenium\\webdriver_binaries\\chromedriver.exe");
   }
 
   public static WebDriver getSeleniumDriver(DriverType type) {
