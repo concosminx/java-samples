@@ -5,7 +5,6 @@ import com.nimsoc.concurrent_collections_examples.atomicvars.AtomicVarsExample;
 import com.nimsoc.concurrent_collections_examples.blockingdeques.BlockingDequesExample;
 import com.nimsoc.concurrent_collections_examples.blockingdeques.priority.BlockingDequesPriorityExample;
 import com.nimsoc.concurrent_collections_examples.delayed.ListsDelayedElemExample;
-import com.nimsoc.concurrent_collections_examples.handles.VariableHandlesExample;
 import com.nimsoc.concurrent_collections_examples.hash.HashMapExample;
 import com.nimsoc.concurrent_collections_examples.navigable.NavigableMapExample;
 import com.nimsoc.concurrent_collections_examples.nonbdeques.NonBlockingDequesExample;
@@ -43,8 +42,7 @@ public class Main {
             /*volatile keyword*/
             //new VolatileExample()
             
-            /*variable handles*/
-            new VariableHandlesExample()
+
     );
     
     

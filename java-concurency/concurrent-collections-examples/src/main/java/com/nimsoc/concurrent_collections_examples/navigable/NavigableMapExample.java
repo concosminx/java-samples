@@ -13,6 +13,10 @@ import java.util.logging.Logger;
  */
 public class NavigableMapExample implements Example {
 
+  public static void main(String[] args) {
+    new NavigableMapExample().demo();
+  }
+
   @Override
   public void demo() {
     ConcurrentSkipListMap<String, Contact> map = new ConcurrentSkipListMap<>();

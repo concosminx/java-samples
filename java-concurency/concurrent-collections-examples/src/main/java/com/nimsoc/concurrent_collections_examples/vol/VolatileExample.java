@@ -12,6 +12,10 @@ import java.util.logging.Logger;
  */
 public class VolatileExample implements Example {
 
+  public static void main(String[] args) {
+    new VolatileExample().demo();
+  }
+
   @Override
   public void demo() {
 

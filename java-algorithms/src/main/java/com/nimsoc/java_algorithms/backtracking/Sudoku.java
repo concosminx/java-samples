@@ -58,14 +58,14 @@ public class Sudoku {
   }
 
   private boolean valid(int colIndex, int rowIndex, int actualNumber) {
-    //if the given number is allready on the row: the number cannot be part of solution
+    //if the given number is already on the row: the number cannot be part of solution
     for (int i = 0; i < BOARD_SIZE; i++) {
       if (sudokuTable[i][rowIndex] == actualNumber) {
         return false;
       }
     }
 
-    //if the given number is allready on the column: the number cannot be part of solution
+    //if the given number is already on the column: the number cannot be part of solution
     for (int k = 0; k < BOARD_SIZE; k++) {
       if (sudokuTable[colIndex][k] == actualNumber) {
         return false;

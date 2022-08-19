@@ -2,7 +2,7 @@ apply plugin: 'java'
 apply plugin: 'jacoco'
 apply plugin: 'application'
 
-    group = 'com.nimsoc'
+group = 'com.nimsoc'
 
 mainClassName = 'com.nimsoc.concurrent_collections_examples.Main'
 
@@ -10,6 +10,4 @@ repositories {
     jcenter()
 }
 
-dependencies {
-    testCompile 'junit:junit:4.12'
-}
+

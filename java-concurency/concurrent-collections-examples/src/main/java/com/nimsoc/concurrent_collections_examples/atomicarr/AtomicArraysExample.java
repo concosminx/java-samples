@@ -11,6 +11,10 @@ import java.util.logging.Logger;
  */
 public class AtomicArraysExample implements Example {
 
+  public static void main(String[] args) {
+    new AtomicArraysExample().demo();
+  }
+
   @Override
   public void demo() {
 

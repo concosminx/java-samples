@@ -10,6 +10,10 @@ import java.util.logging.Logger;
  */
 public class AtomicVarsExample implements Example {
 
+  public static void main(String[] args) {
+    new AtomicVarsExample().demo();
+  }
+
   @Override
   public void demo() {
 

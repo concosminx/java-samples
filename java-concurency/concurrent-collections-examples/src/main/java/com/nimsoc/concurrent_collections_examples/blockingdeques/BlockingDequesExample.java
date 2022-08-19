@@ -13,6 +13,10 @@ import java.util.logging.Logger;
  */
 public class BlockingDequesExample implements Example {
 
+  public static void main(String[] args) {
+    new BlockingDequesExample().demo();
+  }
+
   @Override
   public void demo() {
     LinkedBlockingDeque<String> list = new LinkedBlockingDeque<>(3);

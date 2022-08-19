@@ -11,6 +11,10 @@ import java.util.logging.Logger;
  */
 public class NonBlockingDequesExample implements Example {
 
+  public static void main(String[] args) {
+    new NonBlockingDequesExample().demo();
+  }
+
   @Override
   public void demo() {
     ConcurrentLinkedDeque<String> list = new ConcurrentLinkedDeque<>();

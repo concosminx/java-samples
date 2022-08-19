@@ -12,6 +12,10 @@ import java.util.logging.Logger;
  */
 public class HashMapExample implements Example {
 
+  public static void main(String[] args) {
+    new HashMapExample().demo();
+  }
+
   @Override
   public void demo() {
     ConcurrentHashMap<String, ConcurrentLinkedDeque<Operation>> userHash = new ConcurrentHashMap<>();

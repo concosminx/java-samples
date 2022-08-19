@@ -1,7 +1,7 @@
 package com.nimsoc.java_algorithms.backtracking;
 
 /*
-  The N Queen is the problem of placing N chess queens on an N×N chessboard so that no two queens attack each other.
+  The N Queen is the problem of placing N chess queens on an NxN chessboard so that no two queens attack each other.
  */
 public class NQuens {
 
@@ -14,7 +14,7 @@ public class NQuens {
   }
 
   public Result solve() {
-    Result r = null;
+    Result r;
     if (setQueens(0)) {
       r = new Result(true, chessTable.length);
       for (int i = 0; i < chessTable.length; i++) {

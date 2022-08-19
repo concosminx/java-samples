@@ -12,9 +12,13 @@ import java.util.logging.Level;
  */
 public class ProductPriceUpdateExample implements Example {
 
+  public static void main(String[] args) {
+    new ProductPriceUpdateExample().demo();
+  }
+
   @Override
   public void demo() {
-    /*generates a list o products*/
+    /*generates a list of products*/
     ProductListGenerator generator = new ProductListGenerator();
     List<Product> products = generator.generate(10000);
     

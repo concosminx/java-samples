@@ -13,6 +13,10 @@ import java.util.logging.Logger;
  */
 public class ListsDelayedElemExample implements Example {
 
+  public static void main(String[] args) {
+    new ListsDelayedElemExample().demo();
+  }
+
   @Override
   public void demo() {
     DelayQueue<Event> queue = new DelayQueue<>();

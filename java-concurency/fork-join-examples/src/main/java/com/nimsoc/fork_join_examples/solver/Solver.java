@@ -1,4 +1,4 @@
-package fork.sample;
+package com.nimsoc.fork_join_examples.solver;
 
 import java.util.Arrays;
 import java.util.concurrent.RecursiveAction;
