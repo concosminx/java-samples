@@ -1,0 +1,13 @@
+apply plugin: 'java'
+apply plugin: 'jacoco'
+apply plugin: 'application'
+
+mainClassName = 'com.nimsoc.wsclient.Main'
+
+repositories {
+  jcenter()
+}
+
+dependencies {
+  implementation group: 'org.apache.httpcomponents', name: 'httpclient', version: '4.5.13'
+}

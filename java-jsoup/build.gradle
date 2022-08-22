@@ -1,0 +1,25 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'application'
+
+mainClassName = "crc.jsoup.main.JsoupDownloader"
+
+sourceCompatibility = '1.8'
+[compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
+
+if (!hasProperty('mainClass')) {
+    ext.mainClass = ''
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation group: 'junit', name: 'junit', version: '4.10'
+    implementation 'org.jsoup:jsoup:1.8.1'
+    implementation 'org.slf4j:slf4j-api:1.6.4'
+    implementation 'ch.qos.logback:logback-classic:1.0.1'
+    implementation 'ch.qos.logback:logback-core:1.0.1'
+    implementation 'com.google.guava:guava:23.6-jre'
+}
