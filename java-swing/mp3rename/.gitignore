@@ -1,0 +1,13 @@
+#Folders
+**/.gradle/**
+**/build/**
+
+# Miscellaneous
+*.class
+*.log
+*.pyc
+*.swp
+.DS_Store
+*.iml
+*.ipr
+*.iws
