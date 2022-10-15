@@ -1,1 +1,1 @@
-java -cp ./build/libs/mp3rename.jar com.nimsoc.finder.main.Main
+java -cp D:\Projects\GIT\java-samples\java-swing\mp3rename\build\libs\mp3rename.jar com.nimsoc.finder.main.Main
