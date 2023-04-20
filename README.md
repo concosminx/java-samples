@@ -54,10 +54,10 @@
 - [Examples](/java-lambdas-streams/src/main/java/com/nimsoc/)
 
 ## Selenium
-- [Examples](/java-selenium/e2e-selenium/src/main/java/demotest/app)
+- [Examples](/java-selenium/)
 
 ## Swing
-- [Examples](/java-swing)
+- [Examples](/java-swing/)
 
 ## TestNG
 - [Examples](/java-testing-ng/)
