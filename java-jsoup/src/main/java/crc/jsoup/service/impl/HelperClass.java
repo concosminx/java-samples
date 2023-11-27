@@ -38,4 +38,11 @@ public class HelperClass {
     }
     return fileName;
   }
+
+  static boolean isEmpty(String s) {
+    if (s == null || s.isEmpty()) {
+      return true;
+    }
+    return s.trim().isEmpty();
+  }
 }

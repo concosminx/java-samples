@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.nio.channels.Channels;
 import java.nio.channels.ReadableByteChannel;
+import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -132,6 +133,10 @@ public class GoodFonJsoupEngineImpl implements JsoupEngine {
     return absHref != null && absHref.contains("/download/");
   }
 
+  private static boolean acceptLevel2LinkNew(String absHref) {
+    return absHref != null && absHref.contains("-download-");
+  }
+
   private static boolean acceptLevel3Link(String absHref) {
     return absHref != null && absHref.contains("original") && absHref.endsWith(".jpg");
   }
@@ -142,6 +147,74 @@ public class GoodFonJsoupEngineImpl implements JsoupEngine {
 
   @Override
   public void startDownload(String _queryContent) {
+    File input = new File(getCfg().getDownloadDir(), "input.txt");
+    if (!input.exists()) {
+      stats.append("Input file not found!").append(input.toString()).append(LS);
+      throw new RuntimeException("Input file not found!");
+    }
+
+    try {
+      List<String> lines = Files.readAllLines(input.toPath());
+      AtomicInteger counter = new AtomicInteger(0);
+
+      for (String line: lines) {
+        if (HelperClass.isEmpty(line)) {
+          continue;
+        }
+
+        LOG.info(counter.get() + " | " + line);
+
+        Document imgDoc = Jsoup.connect(line.trim())
+            .userAgent(USER_AGENT)
+            .timeout(HelperClass.CONNECTION_TIMEOUT)
+            .get();
+
+        //get download original button (using css class)
+        Elements imageLinks = imgDoc.select("a.wallpaper__download__rbut");
+        LOG.info(counter.get() + " imageLink(s) " + imageLinks);
+        for (Element link : imageLinks) {
+          String absHref = link.attr("abs:href");
+          if (acceptLevel2LinkNew(absHref)) {
+
+            LOG.info(counter.get() + " | " + " download link acc. " + absHref);
+
+            Document downloadDoc = Jsoup.connect(absHref)
+                .userAgent(USER_AGENT)
+                .timeout(HelperClass.CONNECTION_TIMEOUT)
+                .get();
+
+            //get links and keep only download JPG file link
+            Elements downloadLinks = downloadDoc.select("a[href]");
+
+            for (Element dLink : downloadLinks) {
+              String h = dLink.attr("abs:href");
+              logLink(h);
+              if (acceptLevel3Link(h)) {
+                if (HelperClass.downloadFile(h, this.getCfg().getDownloadDir())) {
+                  counter.getAndIncrement();
+                }
+              }
+            }
+          }
+        }
+
+
+      }
+
+      stats.append("Counter: " + counter.get()).append(LS);
+
+
+
+
+    } catch (IOException e) {
+      throw new RuntimeException(e);
+    }
+
+  }
+
+
+  //@Override
+  public void old_startDownload(String _queryContent) {
     setQueryContent(_queryContent);
     AtomicInteger counter = new AtomicInteger(0);
     for (int i = 0; i < cfg.getMaxPage(); i++) {
